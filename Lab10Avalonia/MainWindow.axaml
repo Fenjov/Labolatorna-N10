@@ -1,9 +1,40 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="Lab10Avalonia.MainWindow"
-        Title="Lab10Avalonia">
-    Welcome to Avalonia!
+        Title="Лабораторна робота №10 - Варіант 8" Width="800" Height="500">
+    
+    <Grid ColumnDefinitions="260, *">
+        <StackPanel Grid.Column="0" Margin="15" Spacing="12" Background="#F9F9F9">
+            <TextBlock Text="Лабораторна №10" FontSize="16" FontWeight="Bold" HorizontalAlignment="Center"/>
+            <TextBlock Text="Варіант 8 (Класи та об'єкти)" FontSize="12" HorizontalAlignment="Center" Foreground="Gray"/>
+            
+            <Button Content="Згенерувати елемент" Click="OnGenerateElementClick" 
+                    HorizontalAlignment="Stretch" HorizontalContentAlignment="Center"
+                    Background="#2196F3" Foreground="White" Height="40" FontWeight="Bold"/>
+            
+            <Separator Height="1" Background="LightGray"/>
+            
+            <TextBlock Text="Кількість за типами:" FontWeight="Bold" FontSize="13"/>
+            <TextBlock Name="lblStats" Text="Кнопки: 0&#x0a;Поля вводу: 0&#x0a;Мітки: 0" LineHeight="22" FontSize="13"/>
+            
+            <Separator Height="1" Background="LightGray"/>
+            
+            <TextBlock Text="Лог розташування (X, Y):" FontWeight="Bold" FontSize="13"/>
+            <ScrollViewer Height="220" Background="White" Padding="5">
+                <TextBlock Name="txtLog" Text="" FontSize="11" TextWrapping="Wrap" Foreground="#333333"/>
+            </ScrollViewer>
+        </StackPanel>
+
+        <Canvas Grid.Column="1" Name="FormCanvas" Background="#EFEFEF">
+            <TextBlock Text="Область форми (Window Canvas)" Canvas.Left="15" Canvas.Top="15" Foreground="DimGray" FontSize="12" FontWeight="SemiBold"/>
+            
+            <Border Name="MyPanelBorder" Width="320" Height="220" 
+                    Background="#FFFFFF" BorderBrush="#4CAF50" BorderThickness="2" CornerRadius="8"
+                    Canvas.Left="180" Canvas.Top="140">
+                <Canvas Name="PanelCanvas" Background="Transparent"/>
+            </Border>
+            
+            <TextBlock Text="Компонент: Панель (Panel)" Canvas.Left="190" Canvas.Top="115" Foreground="#4CAF50" FontSize="12" FontWeight="Bold"/>
+        </Canvas>
+    </Grid>
 </Window>
